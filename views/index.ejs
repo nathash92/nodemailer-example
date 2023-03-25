@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="h-100">
+
+<head>
+	<title>Send Email</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+	<style>
+		body {
+			margin: 0px;
+			width: 100%;
+			min-height: 100%;
+			overflow-x: hidden;
+		}
+	</style>
+
+</head>
+
+<body class="h-100">
+
+	<div class="h-100 row justify-content-center align-items-center">
+		<div class="col-4 mx-auto">
+			<div class="alert alert-primary">
+				<strong>Please Note:</strong>
+				<span>
+					This is an example of nodemailer package
+				</span>
+			</div>
+
+			<div class="my-2 fw-semibold fs-3">Send Email</div>
+
+			<!-- EMAIL SENT SUCCESSFULLY -->
+			<% if(status=="success") { %>
+			<div class="alert alert-success">
+				<strong>Success:</strong>
+				<span>
+					Email has been sent successfully
+				</span>
+			</div>
+			<% } %>
+
+			<!-- EMAIL FAILED -->
+			<% if(status=="error") { %>
+			<div class="alert alert-danger">
+				<strong>Error:</strong>
+				<span>
+					Failed to send email
+				</span>
+			</div>
+			<% } %>
+
+			<form action="/" method="post">
+				<div class="mb-3">
+					<label for="to">To:</label>
+					<input type="email" class="form-control" id="to" name="to" required />
+				</div>
+
+				<div class="mb-3">
+					<label for="subject">Subject:</label>
+					<input type="text" class="form-control" id="subject" name="subject" required />
+				</div>
+
+				<div class="mb-3">
+					<label for="text">Text:</label>
+					<textarea id="text" class="form-control" name="text" required></textarea>
+				</div>
+
+				<div class="text-end">
+					<input type="submit" value="Send" class="btn btn-primary">
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+</body>
+
+</html>
