@@ -3,5 +3,5 @@ Nodemailer example project
 
 Example project for nodemailer
 
-To start app run 
-# npm run dev
+# To start app run 
+npm run dev
