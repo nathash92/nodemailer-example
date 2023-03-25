@@ -25,7 +25,7 @@ app.post('/', async (req, res) => {
   });
 
   let mailOptions = {
-    from: 'nathash.kumar.92@gmail.com',
+    from: 'foo@gmail.com', // change to your email
     to: req.body.to,
     subject: req.body.subject,
     text: req.body.text
